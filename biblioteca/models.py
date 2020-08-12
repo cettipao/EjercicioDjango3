@@ -31,3 +31,18 @@ class Libro(Material):
 
 class Revista(Material):
     pass
+
+class Persona(models.Model):
+    tipoPersona = models.CharField(max_length = 30)
+    nombre = models.CharField(max_length = 30)
+    apellido = models.CharField(max_length = 30)
+    correo = models.CharField(max_length = 30)
+    telefono = models.CharField(max_length = 30)
+    numLibros = models.IntegerField()
+    adeudo = models.FloatField()
+
+class Alumno(Persona):
+    matricula = models.IntegerField()
+
+class Profesor(Persona):
+    numEmpleado = models.IntegerField()
