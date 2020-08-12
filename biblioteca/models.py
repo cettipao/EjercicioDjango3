@@ -46,3 +46,8 @@ class Alumno(Persona):
 
 class Profesor(Persona):
     numEmpleado = models.IntegerField()
+
+class Prestamo(models.Model):
+    codigo = models.CharField(max_length = 30)
+    fechaSalida = models.DateField(auto_now=True)
+    fechaRegreso = models.DateField(auto_now=False)
