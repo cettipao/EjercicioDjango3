@@ -28,7 +28,7 @@ class Editorial(models.Model):
         return self.nombre
 
 class Libro(Material):
-    fotoPortada = models.ImageField(max_length=100, upload_to='fotos_tapa/', default='fotos_tapa/default.png', blank=True)
+    fotoPortada = models.ImageField(max_length=100, upload_to='portadas/', blank=True)
     editorial = models.ForeignKey(
         'Editorial',
         on_delete=models.CASCADE,
