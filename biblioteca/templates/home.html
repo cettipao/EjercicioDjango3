@@ -5,6 +5,18 @@
     <title>Home | Biblioteca</title>
 </head>
 <body>
-
+<h1>Bienvenido</h1>
+<h2>Libros</h2>
+<ul>
+    {% for libro in libros %}
+        <li>{{ libro }}</li>
+    {% endfor %}
+</ul>
+<h2>Revistas</h2>
+<ul>
+    {% for revista in revistas %}
+        <li>{{ revista }}</li>
+    {% endfor %}
+</ul>
 </body>
 </html>
