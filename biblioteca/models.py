@@ -33,7 +33,6 @@ class Revista(Material):
     pass
 
 class Persona(models.Model):
-    tipoPersona = models.CharField(max_length = 30)
     nombre = models.CharField(max_length = 30)
     apellido = models.CharField(max_length = 30)
     correo = models.CharField(max_length = 30)
@@ -49,5 +48,15 @@ class Profesor(Persona):
 
 class Prestamo(models.Model):
     codigo = models.CharField(max_length = 30)
-    fechaSalida = models.DateField(auto_now=True)
+    fechaSalida = models.DateField(auto_now=False)
     fechaRegreso = models.DateField(auto_now=False)
+    Persona = models.ForeignKey(
+        'Persona',
+        on_delete=models.CASCADE,
+        null=False
+    )
+    Material = models.ForeignKey(
+        'Material',
+        on_delete=models.CASCADE,
+        null=False
+    )
